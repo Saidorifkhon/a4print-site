@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BOSMA. — Har bir buyumda sizning g'oyangiz | Print xizmati</title>
-<meta name="description" content="Futbolka, krujka, kepka va yana 7 ta buyumga istalgan dizaynni 1 kunda chop etamiz. Toshkentda tezkor print xizmati — bosma.uz">
+<title>A4PRINT — Har bir buyumda sizning g'oyangiz | Print xizmati</title>
+<meta name="description" content="Futbolka, krujka, kepka va yana 7 ta buyumga istalgan dizaynni chop etamiz. Toshkentda professional print xizmati — a4print.uz">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800&family=Instrument+Sans:ital,wght@0,400;0,500;0,700;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%23141519'/><text x='50' y='68' font-size='52' font-family='Arial Black' font-weight='900' fill='%23F7F4EE' text-anchor='middle'>B</text><circle cx='78' cy='66' r='8' fill='%23FF3E8A'/></svg>">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%23141519'/><text x='50' y='68' font-size='38' font-family='Arial Black' font-weight='900' fill='%23F7F4EE' text-anchor='middle'>A4</text><circle cx='78' cy='66' r='8' fill='%23FF3E8A'/></svg>">
 <style>
 :root{
   --ink:#141519; --paper:#F7F4EE; --cyan:#00B4D8; --magenta:#FF3E8A;
@@ -96,9 +96,16 @@ section{padding:72px 0}
 
 /* ---------- KALKULYATOR ---------- */
 .calc{background:var(--ink);border-radius:24px;padding:46px;color:var(--paper);position:relative;overflow:hidden}
-.calc::after{content:"₸";position:absolute;font-family:var(--disp);font-weight:800;font-size:300px;right:-30px;bottom:-90px;color:rgba(255,255,255,.04);pointer-events:none}
+.calc::after{content:"A4";position:absolute;font-family:var(--disp);font-weight:800;font-size:210px;right:-16px;bottom:-64px;color:rgba(255,255,255,.04);pointer-events:none}
 .calc h2{font-size:clamp(30px,4vw,44px);margin:10px 0 26px}
-.calc-grid{display:grid;grid-template-columns:repeat(3,1fr) auto;gap:16px;align-items:end}
+.calc-grid{display:grid;grid-template-columns:280px 1fr;gap:22px;align-items:start}
+.tech-out{display:flex;flex-wrap:wrap;gap:10px;align-content:flex-start}
+.tech-chip{background:var(--paper);color:var(--ink);border-radius:12px;padding:10px 16px;font-size:14px;font-weight:600;display:flex;flex-direction:column;gap:2px;animation:pop .3s ease}
+.tech-chip small{font-family:var(--mono);font-size:10.5px;color:#5a5e66;font-weight:400}
+.tech-chip.star{background:var(--yellow)}
+.tech-chip.star::before{content:"★ eng mosi";font-family:var(--mono);font-size:9.5px;letter-spacing:.08em}
+html[lang="ru"] .tech-chip.star::before{content:"★ лучший выбор"}
+@keyframes pop{from{opacity:0;transform:scale(.9)}to{opacity:1;transform:scale(1)}}
 .field label{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#a9adb5;display:block;margin-bottom:8px}
 .field select,.field input{width:100%;font-family:var(--sans);font-size:15px;font-weight:600;padding:13px 14px;border-radius:12px;border:none;background:var(--paper);color:var(--ink)}
 .field select:focus,.field input:focus{outline:3px solid var(--cyan)}
@@ -150,8 +157,7 @@ footer a:hover{color:var(--yellow)}
   .hero-in{grid-template-columns:1fr;text-align:center}
   .hero p{margin-inline:auto}.hero-btns,.hero-stats{justify-content:center}
   .hero-art{margin-top:16px}
-  .calc-grid{grid-template-columns:1fr 1fr}
-  .calc-total{grid-column:1/-1}
+  .calc-grid{grid-template-columns:1fr}
   .works{grid-template-columns:repeat(2,1fr)}
   .faq-grid{grid-template-columns:1fr}
 }
@@ -172,10 +178,10 @@ footer a:hover{color:var(--yellow)}
 <!-- NAVBAR -->
 <nav class="nav">
   <div class="wrap nav-in">
-    <a class="logo" href="#">BOSMA<i></i></a>
+    <a class="logo" href="#">A4PRINT<i></i></a>
     <div class="nav-links" id="navLinks">
       <a href="#katalog" data-uz="Katalog" data-ru="Каталог">Katalog</a>
-      <a href="#narx" data-uz="Narxlar" data-ru="Цены">Narxlar</a>
+      <a href="#texno" data-uz="Texnologiya" data-ru="Технологии">Texnologiya</a>
       <a href="#ishlar" data-uz="Portfolio" data-ru="Портфолио">Portfolio</a>
       <a href="#faq" data-uz="Savollar" data-ru="Вопросы">Savollar</a>
       <button class="lang" id="langBtn" aria-label="Tilni almashtirish">RU</button>
@@ -189,9 +195,9 @@ footer a:hover{color:var(--yellow)}
 <header class="hero">
   <div class="wrap hero-in">
     <div>
-      <p class="eyebrow" data-uz="Toshkent · 1 kunda tayyor" data-ru="Ташкент · готово за 1 день">Toshkent · 1 kunda tayyor</p>
+      <p class="eyebrow" data-uz="Toshkent · professional bosmaxona" data-ru="Ташкент · профессиональная типография">Toshkent · professional bosmaxona</p>
       <h1><span data-uz="Har bir buyumda —" data-ru="На каждой вещи —">Har bir buyumda —</span><br><span class="mag" data-uz="sizning g'oyangiz" data-ru="ваша идея">sizning g'oyangiz</span></h1>
-      <p data-uz="Futbolka, krujka, kepka va yana 7 ta buyumga istalgan dizaynni chop etamiz. Faylni yuboring — ertaga olib ketasiz." data-ru="Печатаем любой дизайн на футболках, кружках, кепках и ещё 7 вещах. Отправьте файл — заберите завтра.">Futbolka, krujka, kepka va yana 7 ta buyumga istalgan dizaynni chop etamiz. Faylni yuboring — ertaga olib ketasiz.</p>
+      <p data-uz="Futbolka, krujka, kepka va yana 7 ta buyumga istalgan dizaynni chop etamiz. Faylni yuboring — qolganini bizga qoldiring." data-ru="Печатаем любой дизайн на футболках, кружках, кепках и ещё 7 вещах. Отправьте файл — остальное сделаем мы.">Futbolka, krujka, kepka va yana 7 ta buyumga istalgan dizaynni chop etamiz. Faylni yuboring — qolganini bizga qoldiring.</p>
       <div class="hero-btns">
         <a class="btn btn-mag" href="#buyurtma" data-uz="Dizayn yuborish" data-ru="Отправить дизайн">Dizayn yuborish</a>
         <a class="btn" href="#katalog" data-uz="Katalogni ko'rish" data-ru="Смотреть каталог">Katalogni ko'rish</a>
@@ -199,7 +205,7 @@ footer a:hover{color:var(--yellow)}
       <div class="hero-stats">
         <div class="stat"><b data-count="12000">0</b><span data-uz="buyurtma bosildi" data-ru="заказов напечатано">buyurtma bosildi</span></div>
         <div class="stat"><b data-count="10">0</b><span data-uz="xil mahsulot" data-ru="видов товаров">xil mahsulot</span></div>
-        <div class="stat"><b data-count="24">0</b><span data-uz="soatda tayyor" data-ru="часа — и готово">soatda tayyor</span></div>
+        <div class="stat"><b data-count="5">0</b><span data-uz="bosma texnologiya" data-ru="технологий печати">bosma texnologiya</span></div>
       </div>
     </div>
     <div class="hero-art">
@@ -222,7 +228,7 @@ footer a:hover{color:var(--yellow)}
   <div class="wrap steps-in">
     <div class="step"><i>1</i><div><b data-uz="Yukla" data-ru="Загрузи">Yukla</b><span data-uz="Dizayn faylini yuboring" data-ru="Отправьте файл дизайна">Dizayn faylini yuboring</span></div></div>
     <div class="step"><i>2</i><div><b data-uz="Tanla" data-ru="Выбери">Tanla</b><span data-uz="Buyum, rang va sonini belgilang" data-ru="Укажите вещь, цвет и количество">Buyum, rang va sonini belgilang</span></div></div>
-    <div class="step"><i>3</i><div><b data-uz="Bosamiz" data-ru="Печатаем">Bosamiz</b><span data-uz="24 soatda tayyor qilamiz" data-ru="Готово за 24 часа">24 soatda tayyor qilamiz</span></div></div>
+    <div class="step"><i>3</i><div><b data-uz="Bosamiz" data-ru="Печатаем">Bosamiz</b><span data-uz="Sifatini tekshirib topshiramiz" data-ru="Проверим качество и вручим">Sifatini tekshirib topshiramiz</span></div></div>
   </div>
 </div>
 
@@ -240,35 +246,20 @@ footer a:hover{color:var(--yellow)}
   </div>
 </section>
 
-<!-- KALKULYATOR -->
-<section id="narx" style="padding-top:0">
+<!-- TEXNOLOGIYA TANLAGICH -->
+<section id="texno" style="padding-top:0">
   <div class="wrap rev">
     <div class="calc">
-      <p class="eyebrow" style="color:var(--yellow)" data-uz="Narx kalkulyatori" data-ru="Калькулятор цены">Narx kalkulyatori</p>
-      <h2 data-uz="Ro'yxatdan o'tishsiz hisoblang" data-ru="Рассчитайте без регистрации">Ro'yxatdan o'tishsiz hisoblang</h2>
+      <p class="eyebrow" style="color:var(--yellow)" data-uz="Texnologiya tanlagich" data-ru="Подбор технологии">Texnologiya tanlagich</p>
+      <h2 data-uz="Buyumingizga qaysi bosma mos?" data-ru="Какая печать подойдёт вашей вещи?">Buyumingizga qaysi bosma mos?</h2>
       <div class="calc-grid">
         <div class="field">
-          <label for="cProd" data-uz="Mahsulot" data-ru="Товар">Mahsulot</label>
+          <label for="cProd" data-uz="Buyumni tanlang" data-ru="Выберите вещь">Buyumni tanlang</label>
           <select id="cProd"></select>
         </div>
-        <div class="field">
-          <label for="cQty" data-uz="Soni" data-ru="Количество">Soni</label>
-          <input id="cQty" type="number" min="1" max="10000" value="10">
-        </div>
-        <div class="field">
-          <label for="cSide" data-uz="Bosma tomoni" data-ru="Сторона печати">Bosma tomoni</label>
-          <select id="cSide">
-            <option value="1" data-uz="Bir tomon" data-ru="Одна сторона">Bir tomon</option>
-            <option value="1.6" data-uz="Ikki tomon" data-ru="Две стороны">Ikki tomon</option>
-          </select>
-        </div>
-        <div class="calc-total">
-          <span data-uz="Jami" data-ru="Итого">Jami</span>
-          <b id="cTotal">120 000</b>
-          <span style="letter-spacing:.02em">so'm</span>
-        </div>
+        <div class="tech-out" id="techOut"></div>
       </div>
-      <p class="calc-note" data-uz-html="10+ dona — <em>5%</em>, 50+ dona — <em>10%</em>, 100+ dona — <em>15%</em> chegirma avtomatik qo'llanadi" data-ru-html="10+ шт — <em>5%</em>, 50+ шт — <em>10%</em>, 100+ шт — скидка <em>15%</em> применяется автоматически">10+ dona — <em>5%</em>, 50+ dona — <em>10%</em>, 100+ dona — <em>15%</em> chegirma avtomatik qo'llanadi</p>
+      <p class="calc-note" data-uz="Ikkilanyapsizmi? Faylni Telegram'ga yuboring — texnolog eng chidamli usulni bepul tanlab beradi" data-ru="Сомневаетесь? Отправьте файл в Telegram — технолог бесплатно подберёт самый стойкий способ">Ikkilanyapsizmi? Faylni Telegram'ga yuboring — texnolog eng chidamli usulni bepul tanlab beradi</p>
     </div>
   </div>
 </section>
@@ -302,8 +293,8 @@ footer a:hover{color:var(--yellow)}
 <!-- CTA -->
 <section class="cta" id="buyurtma">
   <p class="eyebrow" data-uz="Buyurtma berish" data-ru="Оформить заказ">Buyurtma berish</p>
-  <h2 data-uz="Bugun yuboring — ertaga tayyor" data-ru="Отправьте сегодня — готово завтра">Bugun yuboring — ertaga tayyor</h2>
-  <a class="btn" href="https://t.me/bosma_uz" target="_blank" rel="noopener">
+  <h2 data-uz="G'oyangizni yuboring — qolgani bizdan" data-ru="Отправьте идею — остальное за нами">G'oyangizni yuboring — qolgani bizdan</h2>
+  <a class="btn" href="https://t.me/a4print_uz" target="_blank" rel="noopener">
     <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.9 4.6 18.8 19c-.2 1-.8 1.2-1.7.8l-4.6-3.4-2.2 2.1c-.3.3-.5.5-1 .5l.3-4.7L18.2 6c.4-.3-.1-.5-.6-.2L7 12.4l-4.5-1.4c-1-.3-1-1 .2-1.4L20.6 3.3c.8-.3 1.5.2 1.3 1.3z"/></svg>
     <span data-uz="Telegram orqali yuborish" data-ru="Отправить через Telegram">Telegram orqali yuborish</span>
   </a>
@@ -312,9 +303,9 @@ footer a:hover{color:var(--yellow)}
 
 <footer>
   <div class="wrap foot-in">
-    <a class="logo" href="#">BOSMA<i></i></a>
+    <a class="logo" href="#">A4PRINT<i></i></a>
     <p data-uz="Toshkent sh., Chilonzor t., Bunyodkor ko'ch. 1 · Har kuni 9:00–20:00" data-ru="г. Ташкент, Чиланзар, ул. Бунёдкор 1 · Ежедневно 9:00–20:00">Toshkent sh., Chilonzor t., Bunyodkor ko'ch. 1 · Har kuni 9:00–20:00</p>
-    <p>© 2026 bosma.uz · <a href="https://t.me/bosma_uz">Telegram</a></p>
+    <p>© 2026 a4print.uz · <a href="https://t.me/a4print_uz">Telegram</a></p>
   </div>
 </footer>
 
@@ -333,16 +324,26 @@ const IC = {
   bottle:'<rect x="38" y="34" width="26" height="52" rx="8"/><rect x="43" y="20" width="16" height="14" rx="3"/>'
 };
 const products = [
-  {ic:'tshirt', col:'#00B4D8', uz:'Futbolka', ru:'Футболка', price:12000, duz:'DTF va shelkografiya, 100% paxta', dru:'DTF и шелкография, 100% хлопок', tag:'Bestseller'},
-  {ic:'mug',    col:'#FF3E8A', uz:'Krujka', ru:'Кружка', price:25000, duz:'Sublimatsiya, sehrli krujkalar ham bor', dru:'Сублимация, есть волшебные кружки', tag:"Sovg'abop"},
-  {ic:'cap',    col:'#FFC533', uz:'Kepka', ru:'Кепка', price:30000, duz:"Kashtado'zlik yoki bosma — tanlov sizda", dru:'Вышивка или печать — на выбор', tag:'Yangi'},
-  {ic:'bag',    col:'#00B4D8', uz:'Eko-sumka', ru:'Эко-сумка', price:20000, duz:'Shopper va tote — brendlar sevimlisi', dru:'Шопперы и тоуты — любимец брендов', tag:'B2B'},
-  {ic:'case',   col:'#FF3E8A', uz:"Telefon g'ilofi", ru:'Чехол', price:35000, duz:'300+ model uchun UV-bosma', dru:'UV-печать для 300+ моделей', tag:'Trend'},
-  {ic:'book',   col:'#FFC533', uz:'Bloknot', ru:'Блокнот', price:18000, duz:"Muqovaga logo — korporativ sovg'a", dru:'Лого на обложке — корпоративный подарок', tag:'B2B'},
-  {ic:'pen',    col:'#00B4D8', uz:'Ruchka', ru:'Ручка', price:3000, duz:'Ommaviy buyurtma — tadbirlar uchun', dru:'Массовые заказы — для мероприятий', tag:'Arzon'},
-  {ic:'pillow', col:'#FF3E8A', uz:'Yostiq', ru:'Подушка', price:45000, duz:"Fotosurat bilan — sovg'alar yetakchisi", dru:'С фото — лидер среди подарков', tag:"Sovg'abop"},
-  {ic:'key',    col:'#FFC533', uz:'Brelok', ru:'Брелок', price:8000, duz:"Akril va yog'och — lazer o'ymakorlik", dru:'Акрил и дерево — лазерная гравировка', tag:'Arzon'},
-  {ic:'bottle', col:'#00B4D8', uz:'Termos-butilka', ru:'Термо-бутылка', price:55000, duz:'UV-bosma, 500 ml — ofis va sport', dru:'UV-печать, 500 мл — офис и спорт', tag:'Sport'}
+  {ic:'tshirt', col:'#00B4D8', uz:'Futbolka', ru:'Футболка', duz:'DTF va shelkografiya, 100% paxta', dru:'DTF и шелкография, 100% хлопок', tag:'Bestseller',
+   tech:[['DTF',"yorqin, 60+ yuvishga chidaydi",'яркая, выдержит 60+ стирок',1],['Shelkografiya','katta tirajlar uchun ideal','идеальна для тиражей',0],["Kashtado'zlik","premium ko'rinish",'премиальный вид',0]]},
+  {ic:'mug', col:'#FF3E8A', uz:'Krujka', ru:'Кружка', duz:'Sublimatsiya, sehrli krujkalar ham bor', dru:'Сублимация, есть волшебные кружки', tag:"Sovg'abop",
+   tech:[['Sublimatsiya','rang sirtga singib ketadi','цвет впитывается в поверхность',1],['UV-bosma','murakkab dizaynlarga','для сложных дизайнов',0]]},
+  {ic:'cap', col:'#FFC533', uz:'Kepka', ru:'Кепка', duz:"Kashtado'zlik yoki bosma — tanlov sizda", dru:'Вышивка или печать — на выбор', tag:'Yangi',
+   tech:[["Kashtado'zlik","yillab o'chmaydi",'не стирается годами',1],['DTF','fotosifat tasvirlar','фотокачество',0]]},
+  {ic:'bag', col:'#00B4D8', uz:'Eko-sumka', ru:'Эко-сумка', duz:'Shopper va tote — brendlar sevimlisi', dru:'Шопперы и тоуты — любимец брендов', tag:'B2B',
+   tech:[['Shelkografiya','matoga mustahkam yopishadi','прочно держится на ткани',1],['DTF',"ko'p rangli logolar",'многоцветные лого',0]]},
+  {ic:'case', col:'#FF3E8A', uz:"Telefon g'ilofi", ru:'Чехол', duz:'300+ model uchun UV-bosma', dru:'UV-печать для 300+ моделей', tag:'Trend',
+   tech:[['UV-bosma','har qanday sirtga, tirnalmaydi','на любую поверхность',1]]},
+  {ic:'book', col:'#FFC533', uz:'Bloknot', ru:'Блокнот', duz:"Muqovaga logo — korporativ sovg'a", dru:'Лого на обложке — корпоративный подарок', tag:'B2B',
+   tech:[['UV-bosma',"bo'rtma effekt bilan",'с эффектом рельефа',1],["Lazer o'yma",'qattiq muqovaga','на твёрдую обложку',0]]},
+  {ic:'pen', col:'#00B4D8', uz:'Ruchka', ru:'Ручка', duz:'Ommaviy buyurtma — tadbirlar uchun', dru:'Массовые заказы — для мероприятий', tag:'Ommaviy',
+   tech:[['Tampo-bosma','mayda yuzalar ustasi','мастер мелких поверхностей',1],["Lazer o'yma",'metall ruchkalarga','на металл',0]]},
+  {ic:'pillow', col:'#FF3E8A', uz:'Yostiq', ru:'Подушка', duz:"Fotosurat bilan — sovg'alar yetakchisi", dru:'С фото — лидер подарков', tag:"Sovg'abop",
+   tech:[['Sublimatsiya','fotosifat, yumshoq qoladi','фотокачество, остаётся мягкой',1]]},
+  {ic:'key', col:'#FFC533', uz:'Brelok', ru:'Брелок', duz:"Akril va yog'och — lazer o'ymakorlik", dru:'Акрил и дерево — гравировка', tag:'Suvenir',
+   tech:[["Lazer o'yma","akril, yog'och, metall",'акрил, дерево, металл',1],['UV-bosma','rangli akrilga','на цветной акрил',0]]},
+  {ic:'bottle', col:'#00B4D8', uz:'Termos-butilka', ru:'Термо-бутылка', duz:'UV-bosma, 500 ml — ofis va sport', dru:'UV-печать, 500 мл — офис и спорт', tag:'Sport',
+   tech:[['UV-bosma','egri sirtga aylanma bosma','круговая печать на изгибе',1],["Lazer o'yma",'metallda minimalizm','минимализм на металле',0]]}
 ];
 const worksData = [
   ['w1','tshirt','Startup UZ','50 futbolka','50 футболок'],['w2','mug','Non & Coffee','120 krujka','120 кружек'],
@@ -352,11 +353,11 @@ const worksData = [
 ];
 const faqData = [
   ["Qanday fayl yuborsam bo'ladi?",'Какой файл можно отправить?',"PNG, PDF, AI, PSD yoki oddiy rasm ham bo'laveradi — dizayner bepul moslashtiradi.",'PNG, PDF, AI, PSD или даже обычную картинку — дизайнер бесплатно адаптирует.'],
-  ['Qancha vaqtda tayyor bo\'ladi?','Сколько ждать заказ?','Oddiy buyurtmalar 24 soatda, 100+ donalik buyurtmalar 2–3 kunda tayyor.','Обычные заказы — 24 часа, тиражи от 100 шт — 2–3 дня.'],
+  ['Muddat qanday belgilanadi?','Как определяется срок?','Buyurtma hajmi va texnologiyaga bog\'liq — qabul paytida menejer aniq sanani aytadi va biz unga qat\'iy amal qilamiz.','Зависит от тиража и технологии — менеджер назовёт точную дату, и мы её строго соблюдаем.'],
   ['1 dona ham bosasizlarmi?','Печатаете ли 1 штуку?',"Ha! Minimal buyurtma yo'q — 1 dona krujka ham bajonidil bosamiz.",'Да! Минимального заказа нет — напечатаем даже 1 кружку.'],
   ['Yetkazib berish bormi?','Есть ли доставка?','Toshkent bo\'ylab yetkazamiz (kuryer), viloyatlarga pochta orqali yuboramiz.','По Ташкенту — курьером, в регионы — почтой.'],
   ["To'lov qanday?",'Как оплатить?','Naqd, Payme, Click yoki hisob-faktura (yuridik shaxslar uchun).','Наличные, Payme, Click или счёт-фактура для юрлиц.'],
-  ['Dizaynim yo\'q bo\'lsa-chi?','А если нет дизайна?',"G'oyangizni ayting — dizaynerimiz 50 000 so'mdan boshlab chizib beradi.",'Расскажите идею — наш дизайнер нарисует от 50 000 сум.']
+  ['Dizaynim yo\'q bo\'lsa-chi?','А если нет дизайна?',"G'oyangizni ayting — shtatdagi dizaynerimiz professional maket chizib beradi.",'Расскажите идею — наш штатный дизайнер нарисует профессиональный макет.']
 ];
 
 /* ---------- RENDER ---------- */
@@ -371,7 +372,7 @@ products.forEach(p=>{
     <div class="card-art" style="background:${p.col}">${svg(p.ic, p.col==='#FFC533'?'#141519':'#fff')}<span class="print">SIZNING LOGO</span></div>
     <div class="card-body"><h3 data-uz="${p.uz}" data-ru="${p.ru}">${p.uz}</h3>
     <p data-uz="${p.duz}" data-ru="${p.dru}">${p.duz}</p>
-    <span class="price">${fmt(p.price)} <span data-uz="so'mdan" data-ru="сум/шт">so'mdan</span></span></div>`;
+    <span class="price">${p.tech.map(t=>t[0]).join(' · ')}</span></div>`;
   grid.appendChild(el);
 });
 const works=document.getElementById('works');
@@ -394,13 +395,13 @@ products.forEach((p,i)=>{
 });
 
 /* ---------- KALKULYATOR ---------- */
-const qty=document.getElementById('cQty'), side=document.getElementById('cSide'), total=document.getElementById('cTotal');
-function calc(){
-  const p=products[+sel.value].price, q=Math.max(1,+qty.value||1), s=+side.value;
-  let disc = q>=100?.85 : q>=50?.9 : q>=10?.95 : 1;
-  total.textContent = fmt(Math.round(p*q*s*disc/500)*500);
+const techOut=document.getElementById('techOut');
+function showTech(){
+  const p=products[+sel.value];
+  techOut.innerHTML=p.tech.map(([name,du,dr,star])=>
+    `<div class="tech-chip${star?' star':''}"><span>${name}</span><small data-uz="${du}" data-ru="${dr}">${lang==='uz'?du:dr}</small></div>`).join('');
 }
-[sel,qty,side].forEach(e=>e.addEventListener('input',calc)); calc();
+sel.addEventListener('input',showTech); showTech();
 
 /* ---------- TIL ALMASHTIRGICH ---------- */
 document.getElementById('langBtn').addEventListener('click',()=>{

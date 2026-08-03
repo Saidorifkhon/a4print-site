@@ -1,6 +1,6 @@
-# BOSMA. — Print xizmati sayti
+# A4PRINT — Print xizmati sayti
 
-Har bir buyumda — sizning g'oyangiz. Top-10 buyumga chop etish xizmati uchun adaptiv sayt.
+A4PRINT — top-10 buyumga chop etish xizmati uchun adaptiv sayt.
 
 ## GitHub Pages orqali jonli qilish
 
